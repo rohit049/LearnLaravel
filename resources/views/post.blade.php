@@ -8,7 +8,8 @@
     <a href="/">Home</a>
 
 	 <article>
-	 	<h2><?= $post ?></h2>
+        <h1><?= $post->title; ?></h1>
+	 	<div><?= $post->body; ?></div>
     </article>
 
     <a href="/posts">&larr;Go Back</a>
