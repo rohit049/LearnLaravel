@@ -5,7 +5,8 @@ use Illuminate\Support\Facades\Route;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
-|--------------------------------------------------------------------------
+|---------------------------@section('content')
+-----------------------------------------------
 |
 | Here is where you can register web routes for your application. These
 | routes are loaded by the RouteServiceProvider within a group which
@@ -23,8 +24,8 @@ Route::get('/posts', function () {
     ]);
 });
 
-Route::get('/post/{post}', function ($slug) {   
+Route::get('/post/{post}', function ($slug) {
     return view('post', [
-        'post' => Post::find($slug)
+        'post' => Post::findOrFail($slug)
     ]);
-})->where('post', '[A-z_\-]+');
+});
